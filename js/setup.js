@@ -13,8 +13,6 @@ L.Control.geocoder({
   })
   .addTo(map);
 
-map.locate({ setView: true, maxZoom: 18 });
-
 map.on('locationfound', function(e) {
   L.marker(e.latlng).addTo(map)
     .bindPopup("You are here").openPopup();
