@@ -3,6 +3,15 @@ var map = L.map('map', {
   zoom: 12,
 });
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+}
 
 // Search Addresses
 L.Control.geocoder({
@@ -17,7 +26,6 @@ map.on('locationfound', function(e) {
   L.marker(e.latlng).addTo(map)
     .bindPopup("You are here").openPopup();
 });
-
 
 //Scale bar
 L.control.scale().addTo(map);
