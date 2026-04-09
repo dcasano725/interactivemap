@@ -13,6 +13,8 @@ L.Control.geocoder({
   })
   .addTo(map);
 
+L.map('map').setView([40.73, -74.17], 13)
+
 map.on('locationfound', function(e) {
   L.marker(e.latlng).addTo(map)
     .bindPopup("You are here").openPopup();
