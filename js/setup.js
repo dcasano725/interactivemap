@@ -3,7 +3,7 @@ document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
 // Initialize map — ZOOMED IN CLOSER
-var map = L.map('map').setView([40.7215, -73.7942], 12);
+var map = L.map('map').setView([40.7215, -73.7942], 22);
 
 // Base map (reliable)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -19,54 +19,6 @@ L.control.scale().addTo(map);
 L.marker([40.722528068066396, -73.79616254887759])
   .addTo(map)
   .bindPopup("D'Angelo Center<br><i>Educatio Christiana Animae Perfectio</i>");
-
-L.marker([40.720594919860424, -73.79435969881555])
-  .addTo(map)
-  .bindPopup("St. Thomas More Church");
-
-L.marker([40.72151164116172, -73.79415208514875])
-  .addTo(map)
-  .bindPopup("The Great Lawn");
-
-L.marker([40.72148138861685, -73.79600592772292])
-  .addTo(map)
-  .bindPopup("St. Albert Hall");
-
-L.marker([40.721909140214194, -73.79495497611067])
-  .addTo(map)
-  .bindPopup("St. Augustine Hall and Library");
-
-L.marker([40.72192094021896, -73.79323842186763])
-  .addTo(map)
-  .bindPopup("St. John Hall");
-
-L.marker([40.722906681170514, -73.79499204439784])
-  .addTo(map)
-  .bindPopup("St. Louise de Marillac Hall");
-
-L.marker([40.72046120044752, -73.79544402694894])
-  .addTo(map)
-  .bindPopup("St. Vincent Health Sciences Center");
-
-L.marker([40.72181397799339, -73.79187291224696])
-  .addTo(map)
-  .bindPopup("St. John's Law");
-
-L.marker([40.72346807069532, -73.79433346303881])
-  .addTo(map)
-  .bindPopup("Tobin School of Business");
-
-L.marker([40.72419753506425, -73.79459093306828])
-  .addTo(map)
-  .bindPopup("Carnesecca Arena");
-
-L.marker([40.72190953618298, -73.7966147749239])
-  .addTo(map)
-  .bindPopup("Sullivan Hall");
-
-L.marker([40.722380978098535, -73.79449777712783])
-  .addTo(map)
-  .bindPopup("Lourdes Hall");
 
 // ----------------------
 // SHAPES
