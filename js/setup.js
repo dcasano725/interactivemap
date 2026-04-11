@@ -3,12 +3,12 @@ document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
 // Initialize map (clean + controlled zoom)
-var map = L.map('map').setView([40.722, -73.7945], 15);
+var map = L.map('map').setView([40.722, -73.7945], 16);
 
 // Base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors',
-  maxZoom: 24
+  maxZoom: 22
 }).addTo(map);
 
 // Scale bar
