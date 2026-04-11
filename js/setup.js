@@ -1,48 +1,51 @@
-window.addEventListener("load", function () {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Map</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body, #map { height: 100%; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    const map = L.map('map').setView([40.7218, -73.7948], 16);
 
-  // FORCE MAP SIZE
-  const mapDiv = document.getElementById('map');
-  mapDiv.style.height = "100vh";
-  mapDiv.style.width = "100%";
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 22
+    }).addTo(map);
 
-  // INIT MAP
-  var map = L.map('map').setView([40.7218, -73.7948], 16);
+    L.control.scale().addTo(map);
 
-  // TILE LAYER
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 22
-  }).addTo(map);
+    L.marker([40.722528068066396, -73.79616254887759])
+      .addTo(map)
+      .bindPopup("D'Angelo Center");
 
-  // SCALE
-  L.control.scale().addTo(map);
+    L.circle([40.72306699011135, -73.79483136562183], {
+      radius: 15,
+      color: "brown",
+      fillOpacity: 0.5
+    }).addTo(map).bindPopup("Dunkin' Donuts and Bookstore");
 
-  // MARKER
-  L.marker([40.722528068066396, -73.79616254887759])
-    .addTo(map)
-    .bindPopup("D'Angelo Center");
-
-  // CIRCLE
-  L.circle([40.72306699011135, -73.79483136562183], {
-    radius: 15,
-    color: "brown",
-    fillOpacity: 0.5
-  }).addTo(map)
-    .bindPopup("Dunkin' Donuts and Bookstore");
-
-  // POLYGON
-  L.polygon([
-    [40.7230650130635, -73.79586802933966],
-    [40.72220752024184, -73.79659346518204],
-    [40.722076293455814, -73.79633374124181],
-    [40.72280256259417, -73.79578145470224],
-    [40.722852337758944, -73.7958620586837],
-    [40.722979038010465, -73.79575458670841],
-    [40.72306727554313, -73.79586802934898]
-  ], {
-    color: "red",
-    weight: 3,
-    fillOpacity: 0.3
-  }).addTo(map);
-
-});
+    L.polygon([
+      [40.7230650130635, -73.79586802933966],
+      [40.72220752024184, -73.79659346518204],
+      [40.722076293455814, -73.79633374124181],
+      [40.72280256259417, -73.79578145470224],
+      [40.722852337758944, -73.7958620586837],
+      [40.722979038010465, -73.79575458670841],
+      [40.72306727554313, -73.79586802934898]
+    ], {
+      color: "red",
+      weight: 3,
+      fillOpacity: 0.3
+    }).addTo(map);
+  </script>
+</body>
+</html>
