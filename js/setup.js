@@ -3,7 +3,7 @@ document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
 // Initialize map (clean + controlled zoom)
-var map = L.map('map').setView([40.722, -73.7945], 17);
+var map = L.map('map').setView([40.722, -73.7945], 15);
 
 // Base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -19,7 +19,7 @@ L.control.scale().addTo(map);
 // ----------------------
 L.marker([40.722528068066396, -73.79616254887759])
   .addTo(map)
-  .bindPopup("D'Angelo Center<br><i>Educatio Christiana Animae Perfectio</i>");
+  .bindPopup("D'Angelo Center");
 
 // ----------------------
 // COFFEE SHOP CIRCLE (FIXED)
