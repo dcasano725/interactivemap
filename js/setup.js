@@ -1,30 +1,11 @@
-// ----------------------
-// GLOBAL FONT (Century Schoolbook)
-// ----------------------
-document.body.style.fontFamily = "Century Schoolbook, serif";
-
-var style = document.createElement('style');
-style.innerHTML = `
-  body, .leaflet-container, .leaflet-popup-content {
-    font-family: "Century Schoolbook", serif;
-  }
-`;
-document.head.appendChild(style);
-
-// ----------------------
-// FORCE MAP SIZE (no CSS file)
-// ----------------------
+// Force map sizing (since no CSS file)
 document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
-// ----------------------
-// INITIALIZE MAP (St. John's)
-// ----------------------
-var map = L.map('map').setView([40.7215, -73.7942], 16);
+// Initialize map — ZOOMED IN CLOSER
+var map = L.map('map').setView([40.7215, -73.7942], 18);
 
-// ----------------------
-// BASE MAP (reliable)
-// ----------------------
+// Base map (reliable)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
