@@ -8,7 +8,7 @@ var map = L.map('map').setView([40.722, -73.7945], 17);
 // Base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors',
-  maxZoom: 22
+  maxZoom: 24
 }).addTo(map);
 
 // Scale bar
@@ -25,7 +25,7 @@ L.marker([40.722528068066396, -73.79616254887759])
 // COFFEE SHOP CIRCLE (FIXED)
 // ----------------------
 L.circle([40.72306699011135, -73.79483136562183], {
-  radius: 25,          // slightly larger so it's visible
+  radius: 15,          // slightly larger so it's visible
   color: "brown",
   fillOpacity: 0.5     // makes it actually visible
 }).addTo(map)
