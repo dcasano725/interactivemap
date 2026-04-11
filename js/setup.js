@@ -3,7 +3,7 @@ document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
 // Initialize map (clean + controlled zoom)
-var map = L.map('map').setView([40.722, -73.7945], 16);
+var map = L.map('map').setView([40.722, -73.7945], 22);
 
 // Base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
