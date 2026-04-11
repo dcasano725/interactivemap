@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Map</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body, #map { height: 100%; width: 100%; }
+    html, body { height: 100%; }
+    #map { height: 100vh; width: 100%; }
   </style>
 </head>
 <body>
   <div id="map"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script>
     const map = L.map('map').setView([40.7218, -73.7948], 16);
 
