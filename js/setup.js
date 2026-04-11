@@ -1,33 +1,28 @@
-
-// Run AFTER page loads (this prevents blank map issues)
 window.addEventListener("load", function () {
 
-  // Force map sizing (no CSS file needed)
-  document.getElementById('map').style.height = "100vh";
-  document.getElementById('map').style.width = "100%";
+  // FORCE MAP SIZE
+  const mapDiv = document.getElementById('map');
+  mapDiv.style.height = "100vh";
+  mapDiv.style.width = "100%";
 
-  // Initialize map (correct zoom + center)
+  // INIT MAP
   var map = L.map('map').setView([40.7218, -73.7948], 16);
 
-  // Base map (safe + reliable)
+  // TILE LAYER
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 22
   }).addTo(map);
 
-  // Scale bar
+  // SCALE
   L.control.scale().addTo(map);
 
-  // ----------------------
-  // D'ANGELO CENTER MARKER
-  // ----------------------
+  // MARKER
   L.marker([40.722528068066396, -73.79616254887759])
     .addTo(map)
     .bindPopup("D'Angelo Center");
 
-  // ----------------------
-  // COFFEE SHOP CIRCLE
-  // ----------------------
+  // CIRCLE
   L.circle([40.72306699011135, -73.79483136562183], {
     radius: 15,
     color: "brown",
@@ -35,9 +30,7 @@ window.addEventListener("load", function () {
   }).addTo(map)
     .bindPopup("Dunkin' Donuts and Bookstore");
 
-  // ----------------------
-  // D'ANGELO POLYGON
-  // ----------------------
+  // POLYGON
   L.polygon([
     [40.7230650130635, -73.79586802933966],
     [40.72220752024184, -73.79659346518204],
