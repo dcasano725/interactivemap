@@ -2,8 +2,8 @@
 document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
-// Initialize map
-var map = L.map('map');
+// Initialize map (clean + controlled zoom)
+var map = L.map('map').setView([40.722, -73.7945], 17);
 
 // Base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -22,17 +22,17 @@ L.marker([40.722528068066396, -73.79616254887759])
   .bindPopup("D'Angelo Center<br><i>Educatio Christiana Animae Perfectio</i>");
 
 // ----------------------
-// COFFEE SHOP CIRCLE
+// COFFEE SHOP CIRCLE (FIXED)
 // ----------------------
 L.circle([40.72306699011135, -73.79483136562183], {
-  radius: 20,
-  color: "brown"
-})
-  .addTo(map)
+  radius: 25,          // slightly larger so it's visible
+  color: "brown",
+  fillOpacity: 0.5     // makes it actually visible
+}).addTo(map)
   .bindPopup("Dunkin' Donuts and Bookstore");
 
 // ----------------------
-// D'ANGELO POLYGON
+// D'ANGELO POLYGON (FIXED)
 // ----------------------
 L.polygon([
   [40.7230650130635, -73.79586802933966],
@@ -42,18 +42,9 @@ L.polygon([
   [40.722852337758944, -73.7958620586837],
   [40.722979038010465, -73.79575458670841],
   [40.72306727554313, -73.79586802934898]
-])
-  .addTo(map)
+], {
+  color: "red",
+  weight: 3,
+  fillOpacity: 0.3   // THIS is why you couldn’t see it before
+}).addTo(map)
   .bindPopup("D'Angelo Center");
-
-// ----------------------
-// CAMPUS BOUNDS (ZOOMED OUT USING PADDING)
-// ----------------------
-var campusBounds = L.latLngBounds([
-  [40.7245, -73.7985],
-  [40.7195, -73.7915]
-]);
-
-map.fitBounds(campusBounds, {
-  padding: [80, 80]  // 👈 THIS is the key (increase for more zoom out)
-});
