@@ -1,9 +1,10 @@
+
 // Force map sizing
 document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
-// Initialize map (clean + controlled zoom)
-var map = L.map('map').setView([40.722, -73.7945], 22);
+// Initialize map (FIXED ZOOM)
+var map = L.map('map').setView([40.7218, -73.7948], 16);
 
 // Base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -22,17 +23,17 @@ L.marker([40.722528068066396, -73.79616254887759])
   .bindPopup("D'Angelo Center");
 
 // ----------------------
-// COFFEE SHOP CIRCLE (FIXED)
+// COFFEE SHOP CIRCLE
 // ----------------------
 L.circle([40.72306699011135, -73.79483136562183], {
-  radius: 15,          // slightly larger so it's visible
+  radius: 15,
   color: "brown",
-  fillOpacity: 0.5     // makes it actually visible
+  fillOpacity: 0.5
 }).addTo(map)
   .bindPopup("Dunkin' Donuts and Bookstore");
 
 // ----------------------
-// D'ANGELO POLYGON (FIXED)
+// D'ANGELO POLYGON
 // ----------------------
 L.polygon([
   [40.7230650130635, -73.79586802933966],
@@ -45,6 +46,6 @@ L.polygon([
 ], {
   color: "red",
   weight: 3,
-  fillOpacity: 0.3   // THIS is why you couldn’t see it before
+  fillOpacity: 0.3
 }).addTo(map)
   .bindPopup("D'Angelo Center");
