@@ -1,9 +1,9 @@
-// Force map sizing (since no CSS file)
+// Force map sizing
 document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
 // Initialize map
-var map = L.map('map').setView([40.7215, -73.7942], 16);
+var map = L.map('map');
 
 // Base map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -15,9 +15,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.control.scale().addTo(map);
 
 // ----------------------
-// D'ANGELO CENTER (ONLY MARKER)
+// D'ANGELO CENTER MARKER
 // ----------------------
-var dAngelo = L.marker([40.722528068066396, -73.79616254887759])
+L.marker([40.722528068066396, -73.79616254887759])
   .addTo(map)
   .bindPopup("D'Angelo Center<br><i>Educatio Christiana Animae Perfectio</i>");
 
@@ -47,11 +47,13 @@ L.polygon([
   .bindPopup("D'Angelo Center");
 
 // ----------------------
-// CAMPUS BOUNDS (slightly zoomed OUT)
+// CAMPUS BOUNDS (ZOOMED OUT USING PADDING)
 // ----------------------
 var campusBounds = L.latLngBounds([
-  [40.7252, -73.7992], // expanded NW
-  [40.7188, -73.7908]  // expanded SE
+  [40.7245, -73.7985],
+  [40.7195, -73.7915]
 ]);
 
-map.fitBounds(campusBounds);
+map.fitBounds(campusBounds, {
+  padding: [80, 80]  // 👈 THIS is the key (increase for more zoom out)
+});
