@@ -3,7 +3,7 @@ document.getElementById('map').style.height = "100vh";
 document.getElementById('map').style.width = "100%";
 
 // Initialize map — ZOOMED IN CLOSER
-var map = L.map('map').setView([40.7215, -73.7942], 18);
+var map = L.map('map').setView([40.7215, -73.7942], 12);
 
 // Base map (reliable)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
