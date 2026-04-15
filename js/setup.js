@@ -19,7 +19,7 @@ L.control.scale().addTo(map);
 // ----------------------
 L.marker([40.722528068066396, -73.79616254887759])
   .addTo(map)
-  .bindPopup("D'Angelo Center<br><i>Educatio Christiana Animae Perfectio</i>");
+  .bindPopup("D'Angelo Center");
 
 // ----------------------
 // COFFEE SHOP CIRCLE (FIXED)
